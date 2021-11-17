@@ -8,6 +8,7 @@ import bodyParser from "body-parser";
 
 //Routes
 import indexRoute from "./routes/index.routes"
+import dashboardRoute from "./routes/dashboard.routes";
 
 export class App{
     private app: Application;
@@ -28,7 +29,9 @@ export class App{
     }
 
     routes(){
-        this.app.use(indexRoute);
+        this.app.use(
+            indexRoute,
+            dashboardRoute);
     }
 
     settings(){
