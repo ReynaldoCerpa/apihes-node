@@ -7,9 +7,7 @@ import compression from "compression"
 import bodyParser from "body-parser";
 
 //Routes
-import loginRoute from "./routes/login.routes"
 import indexRoute from "./routes/index.routes"
-import registerRoute from "./routes/register.routes"
 
 export class App{
     private app: Application;
@@ -30,9 +28,7 @@ export class App{
     }
 
     routes(){
-        this.app.use(loginRoute);
         this.app.use(indexRoute);
-        this.app.use(registerRoute);
     }
 
     settings(){
