@@ -15,3 +15,11 @@ export async function getPromotores(req: Request, res: Response): Promise<Respon
     }
 }
 
+export async function getIndex(req: Request, res: Response): Promise<Response | void> {
+    try {
+        return res.send("Connected to dummy api")
+    }
+    catch (e) {
+        console.log(e)
+    }
+}
