@@ -14,3 +14,16 @@ export async function getAwardsData(req: Request, res: Response): Promise<Respon
         console.log(e)
     }
 }
+
+export async function getTopThree(req: Request, res: Response): Promise<Response | void> {
+    try {
+        console.log("Connected");
+        
+        const conn = await connect();
+        const data = await conn.query("select titulo as 'title', idPropositor as 'author', propuesta as 'description' from reporteidea r limit 3");
+        return res.json(data);
+    }
+    catch (e) {
+        console.log(e)
+    }
+}
