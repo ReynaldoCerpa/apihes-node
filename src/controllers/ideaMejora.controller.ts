@@ -2,7 +2,7 @@ import {Request, Response} from "express";
 import { connect } from '../database'
 const path = require("path");
 
-export async function getDashboardData(req: Request, res: Response): Promise<Response | void> {
+export async function addIdeaMejora(req: Request, res: Response): Promise<Response | void> {
     try {
         console.log("Connected");
         const values = req.body;
