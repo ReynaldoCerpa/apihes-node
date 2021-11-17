@@ -8,10 +8,12 @@ import bodyParser from "body-parser";
 import cors from "cors";
 
 //Routes
-import indexRoute from "./routes/index.routes"
+import indexRoute from "./routes/index.routes";
 import dashboardRoute from "./routes/dashboard.routes";
 import awardsRoute from "./routes/awards.routes";
 import indicatorsRoute from "./routes/indicators.routes";
+import reporteIdeaRoute from "./routes/reporteIdea.routes"; 
+import ideaMejora from "./routes/ideaMejora.routes";
 
 export class App{
     private app: Application;
@@ -37,7 +39,8 @@ export class App{
             indexRoute,
             dashboardRoute,
             awardsRoute,
-            indicatorsRoute);
+            indicatorsRoute,
+            ideaMejora);
     }
 
     settings(){
