@@ -8,7 +8,7 @@ export async function getDashboardData(req: Request, res: Response): Promise<Res
         
         const conn = await connect();
         const data = await conn.query("select idReporte as 'numProp', MONTH(fechaElaboracion) as 'mes', fechaElaboracion as 'fecha', idReporte as 'areaPropone', titulo as 'titulo', idReporte as 'areaMejora', idReporte as 'tipoMejora', idReporte as 'gerente' from reporteidea");
-        return res.json(data);
+        return res.json(data[0]);
     }
     catch (e) {
         console.log(e)
