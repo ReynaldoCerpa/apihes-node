@@ -5,6 +5,7 @@ import morgan from "morgan";
 import helmet from "helmet";
 import compression from "compression"
 import bodyParser from "body-parser";
+import cors from "cors";
 
 //Routes
 import indexRoute from "./routes/index.routes"
@@ -26,6 +27,7 @@ export class App{
         this.app.use(bodyParser.json())
         this.app.use(helmet())
         this.app.use(compression())
+        this.app.use(cors())
     }
 
     routes(){
