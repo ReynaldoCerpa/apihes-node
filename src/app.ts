@@ -10,6 +10,8 @@ import cors from "cors";
 //Routes
 import indexRoute from "./routes/index.routes"
 import dashboardRoute from "./routes/dashboard.routes";
+import awardsRoute from "./routes/awards.routes";
+import indicatorsRoute from "./routes/indicators.routes";
 
 export class App{
     private app: Application;
@@ -33,7 +35,9 @@ export class App{
     routes(){
         this.app.use(
             indexRoute,
-            dashboardRoute);
+            dashboardRoute,
+            awardsRoute,
+            indicatorsRoute);
     }
 
     settings(){
