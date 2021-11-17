@@ -8,7 +8,7 @@ export async function getVerticalBarData(req: Request, res: Response): Promise<R
         
         const conn = await connect();
         const data = await conn.query("select MONTH(fechaElaboracion) as 'mes', count(idReporte) from reporteidea group by mes");
-        return res.json(data);
+        return res.json(data[0]);
     }
     catch (e) {
         console.log(e)
@@ -21,7 +21,7 @@ export async function getHorizontalBarData(req: Request, res: Response): Promise
         
         const conn = await connect();
         const data = await conn.query("select idPropositor, count(idReporte) from reporteidea group by idPropositor;");
-        return res.json(data);
+        return res.json(data[0]);
     }
     catch (e) {
         console.log(e)
@@ -34,7 +34,7 @@ export async function getPieChartData(req: Request, res: Response): Promise<Resp
         
         const conn = await connect();
         const data = await conn.query("select count(idReporte) as 'cuenta', 100 - count(idReporte) from reporteidea");
-        return res.json(data);
+        return res.json(data[0]);
     }
     catch (e) {
         console.log(e)
