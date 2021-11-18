@@ -7,7 +7,7 @@ export async function addIdeaMejora(req: Request, res: Response): Promise<Respon
         console.log("Connected");
         const values = req.body;
         const conn = await connect();
-        const data = await conn.query("insert into accion values ?", [values]);
+        const data = await conn.query("insert into accion (idReporte, idEmpleado, fechaLimite, fechaRealizado, archivoEvidencia, descripcion) values ?", [values]);
         return res.json(data[0]);
     }
     catch (e) {

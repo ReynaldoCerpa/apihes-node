@@ -13,7 +13,7 @@ import dashboardRoute from "./routes/dashboard.routes";
 import awardsRoute from "./routes/awards.routes";
 import indicatorsRoute from "./routes/indicators.routes";
 import reporteIdeaRoute from "./routes/reporteIdea.routes"; 
-import ideaMejora from "./routes/ideaMejora.routes";
+import ideaMejoraRoute from "./routes/ideaMejora.routes";
 
 export class App{
     private app: Application;
@@ -40,7 +40,7 @@ export class App{
             dashboardRoute,
             awardsRoute,
             indicatorsRoute,
-            ideaMejora);
+            ideaMejoraRoute);
     }
 
     settings(){
